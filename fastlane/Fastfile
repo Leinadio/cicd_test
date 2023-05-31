@@ -9,11 +9,7 @@ platform :android do
   # end
 
   lane :deploy_to_firebase do
-    gradle(
-      task: 'assemble',
-      build_type: 'Release'
-      project_dir: 'android/'
-    )
+    sh "flutter build apk --release"
     # Étape de déploiement sur Firebase App Distribution
     firebase_app_distribution(
       app: "com.example.cicd_test",
