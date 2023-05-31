@@ -25,13 +25,16 @@ jobs:
           flutter-version: '3.10.2'  # Remplacez par votre version de Flutter
 
       - name: Install Fastlane
+        working-directory: ./android
         run: gem install bundler && bundle install
 
       - name: Fastlane versions
+        working-directory: ./android
         run: fastlane --version
 
       - name: Build and deploy to Firebase App Distribution
         env:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
+        working-directory: ./android
         run: |
           fastlane deploy_to_firebase
