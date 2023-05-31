@@ -6,7 +6,8 @@ platform :android do
     sh "flutter clean"
     sh "flutter pub get"
     sh "flutter build apk --release" # Remplacez par "flutter build appbundle --release" pour générer un bundle d'application (.aab)
-    end
+  end
+
   lane :deploy_to_firebase do
     # Étapes de construction de l'application Flutter
     flutter_build()
