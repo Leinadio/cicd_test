@@ -12,7 +12,6 @@ platform :android do
     gradle(
       task: 'assemble',
       build_type: 'Release'
-      project_dir: 'android'
     )
     # Étape de déploiement sur Firebase App Distribution
     firebase_app_distribution(
