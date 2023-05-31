@@ -10,7 +10,7 @@ platform :android do
 
   lane :deploy_to_firebase do
     # Étape de signature de l'application
-    build_flutter_app
+    build_flutter_app()
 
     gradle(
       task: "assemble",
