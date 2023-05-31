@@ -9,9 +9,6 @@ platform :android do
   end
 
   lane :deploy_to_firebase do
-    # Étapes de construction de l'application Flutter
-    flutter_build()
-
     # Étape de signature de l'application
     gradle(
       task: "assemble",
