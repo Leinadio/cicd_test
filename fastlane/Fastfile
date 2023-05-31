@@ -9,12 +9,6 @@ platform :android do
   end
 
   lane :deploy_to_firebase do
-    # Étape de signature de l'application
-    gradle(
-      task: "assemble",
-      build_type: "release"
-    )
-
     # Étape de déploiement sur Firebase App Distribution
     firebase_app_distribution(
       app: "com.example.cicd_test",
