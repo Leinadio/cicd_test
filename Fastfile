@@ -5,11 +5,13 @@ platform :android do
     # Étape de construction de l'application Flutter
     sh "flutter clean"
     sh "flutter pub get"
-    sh "flutter build apk --release" # Remplacez par "flutter build appbundle --release" pour générer un bundle d'application (.aab)
+    sh "bundle exec fastlane android build" # Remplacez par "flutter build appbundle --release" pour générer un bundle d'application (.aab)
   end
 
   lane :deploy_to_firebase do
     # Étape de signature de l'application
+    build_flutter_app
+
     gradle(
       task: "assemble",
       build_type: "release"
