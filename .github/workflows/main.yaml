@@ -34,5 +34,4 @@ jobs:
         env:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
         run: |
-          fastlane build_flutter_app
           fastlane deploy_to_firebase

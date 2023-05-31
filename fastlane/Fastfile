@@ -1,14 +1,18 @@
 default_platform(:android)
 
 platform :android do
-  lane :build_flutter_app do
-    # Étape de construction de l'application Flutter
-    sh "flutter clean"
-    sh "flutter pub get"
-    sh "flutter build apk --release" # Remplacez par "flutter build appbundle --release" pour générer un bundle d'application (.aab)
-  end
+  # lane :build_flutter_app do
+  #   # Étape de construction de l'application Flutter
+  #   sh "flutter clean"
+  #   sh "flutter pub get"
+  #   sh "flutter build apk --release" # Remplacez par "flutter build appbundle --release" pour générer un bundle d'application (.aab)
+  # end
 
   lane :deploy_to_firebase do
+    gradle(
+      task: 'assemble',
+      build_type: 'Release'
+    )
     # Étape de déploiement sur Firebase App Distribution
     firebase_app_distribution(
       app: "com.example.cicd_test",
