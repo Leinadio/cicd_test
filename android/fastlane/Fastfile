@@ -19,7 +19,7 @@ platform :android do
       debug: false,
       android_artifact_type: "APK",
       firebase_cli_path: "/usr/local/bin/firebase",
-      apk_path: "../build/app/outputs/apk/debug/app-debug.apk",
+      apk_path: "../build/app/outputs/flutter-apk/app-release.apk",
     )
   end
 end
