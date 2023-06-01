@@ -37,7 +37,7 @@ jobs:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
         working-directory: ./ios
         run: |
-          fastlane deploy_to_firebase
+          fastlane custom_lane
 
       - name: Build and deploy to Firebase App Distribution for Android
         env:
