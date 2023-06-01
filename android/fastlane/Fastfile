@@ -9,7 +9,7 @@ platform :android do
   # end
 
   lane :deploy_to_firebase do
-    sh "flutter build appbundle"
+    sh "flutter build apk --release"
     # Étape de déploiement sur Firebase App Distribution
     firebase_app_distribution(
       app: "com.example.cicd_test",
