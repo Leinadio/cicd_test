@@ -9,7 +9,6 @@ platform :android do
   # end
 
   lane :deploy_to_firebase do
-    sh "echo \"$ENV['FIREBASE_CLI_TOKEN']\""
     sh "flutter build apk --release"
     # Étape de déploiement sur Firebase App Distribution
     firebase_app_distribution(
